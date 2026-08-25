@@ -6,6 +6,17 @@
       "version": "24"
     }
   },
-  "postCreateCommand": "corepack enable && corepack prepare pnpm@10.33.2 --activate",
+  "postCreateCommand": "corepack enable && corepack prepare pnpm@10.33.2 --activate && pnpm install --frozen-lockfile",
+  "forwardPorts": [5173, 7456],
+  "portsAttributes": {
+    "5173": {
+      "label": "OpenDesign Web",
+      "onAutoForward": "notify"
+    },
+    "7456": {
+      "label": "OpenDesign Daemon",
+      "onAutoForward": "silent"
+    }
+  },
   "remoteUser": "codespace"
 }
