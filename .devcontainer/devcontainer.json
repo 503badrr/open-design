@@ -1,4 +1,11 @@
 {
+  "name": "OpenDesign Codespaces",
   "image": "mcr.microsoft.com/devcontainers/universal:2",
-  "features": {}
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "24"
+    }
+  },
+  "postCreateCommand": "corepack enable && corepack prepare pnpm@10.33.2 --activate",
+  "remoteUser": "codespace"
 }
