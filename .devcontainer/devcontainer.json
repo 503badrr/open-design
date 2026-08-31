@@ -7,7 +7,6 @@
     }
   },
   "postCreateCommand": "corepack enable && corepack prepare pnpm@10.33.2 --activate && pnpm install --frozen-lockfile",
-  "postStartCommand": "bash -lc 'if [ -n \"$CODESPACE_NAME\" ]; then export OD_ALLOWED_DEV_ORIGINS=\"${CODESPACE_NAME}-5173.${GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN:-app.github.dev}\"; fi; pnpm tools-dev start web --daemon-port 7456 --web-port 5173'",
   "forwardPorts": [5173, 7456],
   "portsAttributes": {
     "5173": {
